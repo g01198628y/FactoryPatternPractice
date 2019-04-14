@@ -12,3 +12,8 @@
 
 **策略模式目標在處理相同物件下可以有不同的演算法/行為；
 而工廠模式則是專注於處理實體化物件的部分。**
+
+
+Ref1: https://ithelp.ithome.com.tw/articles/10202075
+
+Ref2: https://dotblogs.com.tw/joysdw12/2013/06/23/design-pattern-simple-factory-pattern
