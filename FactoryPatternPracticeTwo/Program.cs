@@ -10,25 +10,34 @@ namespace FactoryPatternPracticeTwo
     {
         private static void Main(string[] args)
         {
-            OrderBlackTea();
+            BeverageStore beverageStore = new BeverageStore();
+            beverageStore.OrderBeverage("BlackTea");
         }
+    }
 
-        public static GreenTea OrderGreenTeaTea()
+    public class BeverageStore
+    {
+        public IMakeBeverage OrderBeverage(string beverageType)
         {
-            GreenTea greenTea = new GreenTea();
-            greenTea.AddMaterial();
-            greenTea.Brew();
-            greenTea.PouredCup();
-            return greenTea;
-        }
+            IMakeBeverage beverage;
+            switch (beverageType)
+            {
+                case "GreenTea":
+                    beverage = new GreenTea();
+                    break;
 
-        public static BlackTea OrderBlackTea()
-        {
-            BlackTea blackTea = new BlackTea();
-            blackTea.AddMaterial();
-            blackTea.Brew();
-            blackTea.PouredCup();
-            return blackTea;
+                case "BlackTea":
+                    beverage = new BlackTea();
+                    break;
+
+                default:
+                    return null;
+            }
+
+            beverage.AddMaterial();
+            beverage.Brew();
+            beverage.PouredCup();
+            return beverage;
         }
     }
 
@@ -68,7 +77,7 @@ namespace FactoryPatternPracticeTwo
         }
     }
 
-    internal interface IMakeBeverage
+    public interface IMakeBeverage
     {
         void AddMaterial();
 
