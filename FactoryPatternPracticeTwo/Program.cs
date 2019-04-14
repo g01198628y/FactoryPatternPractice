@@ -10,14 +10,36 @@ namespace FactoryPatternPracticeTwo
     {
         private static void Main(string[] args)
         {
-            BeverageStore beverageStore = new BeverageStore();
-            beverageStore.OrderBeverage("BlackTea");
+            BeverageStore beverageStore = new BeverageStore(new BeverageFactory());
+            Console.WriteLine("客人點了綠茶");
+            beverageStore.OrderBeverage("GreenTea");
         }
     }
 
+    //將產生實體化的部分提取出到BeverageFactory類別
     public class BeverageStore
     {
+        private readonly BeverageFactory _beverageFactory;
+
+        public BeverageStore(BeverageFactory beverageFactory)
+        {
+            _beverageFactory = beverageFactory;
+        }
+
         public IMakeBeverage OrderBeverage(string beverageType)
+        {
+            var beverage = _beverageFactory.CreateBeverage(beverageType);
+            beverage.AddMaterial();
+            beverage.Brew();
+            beverage.PouredCup();
+            return beverage;
+        }
+    }
+
+    //建立工廠類別由CreateBeverage方法來決定要產生哪一個飲品類別，日後如要增加新飲品類別就由此處修改即可。
+    public class BeverageFactory
+    {
+        public IMakeBeverage CreateBeverage(string beverageType)
         {
             IMakeBeverage beverage;
             switch (beverageType)
@@ -34,9 +56,6 @@ namespace FactoryPatternPracticeTwo
                     return null;
             }
 
-            beverage.AddMaterial();
-            beverage.Brew();
-            beverage.PouredCup();
             return beverage;
         }
     }
