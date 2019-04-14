@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPatternPracticeOne", "FactoryMethodPattern\FactoryPatternPracticeOne.csproj", "{FBD2707A-3FC1-4123-B178-4D53B5E6FE3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPatternPracticeOne", "FactoryMethodPattern\FactoryPatternPracticeOne\FactoryPatternPracticeOne.csproj", "{FBD2707A-3FC1-4123-B178-4D53B5E6FE3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPatternPracticeTwo", "FactoryPatternPracticeTwo\FactoryPatternPracticeTwo.csproj", "{7F54424C-F2B0-4F4B-B077-674D1EA6D105}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPatternPracticeTwo", "FactoryMethodPattern\FactoryPatternPracticeTwo\FactoryPatternPracticeTwo.csproj", "{7F54424C-F2B0-4F4B-B077-674D1EA6D105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
